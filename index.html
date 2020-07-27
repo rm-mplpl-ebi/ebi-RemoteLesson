@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
  *  Copyright (c) 2014 The WebRTC project authors. All Rights Reserved.
@@ -23,12 +22,12 @@
 
   <title>AppRTC</title>
 
-  <link rel="manifest" href="/manifest.json">
-  <link rel="icon" sizes="192x192" href="/images/webrtc-icon-192x192.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" sizes="192x192" href="images/webrtc-icon-192x192.png">
 
   <link rel="canonical" href="">
 
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="css/main.css">
 
 </head>
 
@@ -112,18 +111,18 @@
 
   </div>
   <div id="privacy">
-    <a href="//www.google.com/accounts/TOS">Terms</a>
+    <a href="https://www.google.com/accounts/TOS">Terms</a>
     &#32;&#124;&#32;
-    <a href="//www.google.com/policies/privacy/">Privacy</a>
+    <a href="https://www.google.com/policies/privacy/">Privacy</a>
     &#32;&#124;&#32;
-    <a href="//github.com/webrtc/apprtc">Code repo</a>
+    <a href="https://github.com/webrtc/apprtc">Code repo</a>
   </div>
 
 
   
 
 
-  <script src="/js/apprtc.debug.js"></script>
+  <script src="js/apprtc.debug.js"></script>
 
 
 
@@ -134,7 +133,7 @@
       isLoopback: false,
       warningMessages: [],
 
-      mediaConstraints: {"audio": true, "video": {"optional": [{"minWidth": "1280"}, {"minHeight": "720"}], "mandatory": {}}},
+      mediaConstraints: {"audio": true, "video": true},
       offerOptions: {},
       peerConnectionConfig: {"rtcpMuxPolicy": "require", "bundlePolicy": "max-bundle", "iceServers": []},
       peerConnectionConstraints: {"optional": []},
