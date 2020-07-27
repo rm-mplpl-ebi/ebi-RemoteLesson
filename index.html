@@ -13,7 +13,7 @@
   <meta name="description" content="WebRTC reference app">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
   <meta itemprop="description" content="Video chat using the reference WebRTC application">
-  <meta itemprop="image" content="/images/webrtc-icon-192x192.png">
+  <meta itemprop="image" content="webrtc-icon-192x192.png">
   <meta itemprop="name" content="AppRTC">
   <meta name="mobile-web-app-capable" content="yes">
   <meta id="theme-color" name="theme-color" content="#1e1e1e">
@@ -23,7 +23,7 @@
   <title>AppRTC</title>
 
   <link rel="manifest" href="manifest.json">
-  <link rel="icon" sizes="192x192" href="images/webrtc-icon-192x192.png">
+  <link rel="icon" sizes="192x192" href="webrtc-icon-192x192.png">
 
   <link rel="canonical" href="">
 
@@ -119,7 +119,7 @@
   </div>
 
 
-  
+  <script src="js/loopback.js"></script>
 
 
   <script src="js/apprtc.debug.js"></script>
@@ -130,13 +130,13 @@
   <script type="text/javascript">
     var loadingParams = {
       errorMessages: [],
-      isLoopback: false,
+      isLoopback: true,
       warningMessages: [],
 
-      mediaConstraints: {"audio": true, "video": true},
+      mediaConstraints: {"audio": true, "video": {"optional": [], "mandatory": {"minWidth": "1280", "minHeight": "720"}}},
       offerOptions: {},
       peerConnectionConfig: {"rtcpMuxPolicy": "require", "bundlePolicy": "max-bundle", "iceServers": []},
-      peerConnectionConstraints: {"optional": []},
+      peerConnectionConstraints: {"optional": [{"DtlsSrtpKeyAgreement": false}]},
       iceServerRequestUrl: 'https://networktraversal.googleapis.com/v1alpha/iceconfig?key=AIzaSyA2WoxRAjLTwrD7upuk9N2qdlcOch3D2wU',
       iceServerTransports: '',
       wssUrl: 'wss://apprtc-ws.webrtc.org:443/ws',
