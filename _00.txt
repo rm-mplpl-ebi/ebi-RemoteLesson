@@ -1,0 +1,1 @@
+appr.tc/index-hd=true&stereo=true&debug=loopback.html
