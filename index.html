@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--
  *  Copyright (c) 2014 The WebRTC project authors. All Rights Reserved.
@@ -13,7 +14,7 @@
   <meta name="description" content="WebRTC reference app">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
   <meta itemprop="description" content="Video chat using the reference WebRTC application">
-  <meta itemprop="image" content="webrtc-icon-192x192.png">
+  <meta itemprop="image" content="/images/webrtc-icon-192x192.png">
   <meta itemprop="name" content="AppRTC">
   <meta name="mobile-web-app-capable" content="yes">
   <meta id="theme-color" name="theme-color" content="#1e1e1e">
@@ -22,12 +23,12 @@
 
   <title>AppRTC</title>
 
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" sizes="192x192" href="webrtc-icon-192x192.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" sizes="192x192" href="/images/webrtc-icon-192x192.png">
 
   <link rel="canonical" href="">
 
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="/css/main.css">
 
 </head>
 
@@ -111,18 +112,18 @@
 
   </div>
   <div id="privacy">
-    <a href="https://www.google.com/accounts/TOS">Terms</a>
+    <a href="//www.google.com/accounts/TOS">Terms</a>
     &#32;&#124;&#32;
-    <a href="https://www.google.com/policies/privacy/">Privacy</a>
+    <a href="//www.google.com/policies/privacy/">Privacy</a>
     &#32;&#124;&#32;
-    <a href="https://github.com/webrtc/apprtc">Code repo</a>
+    <a href="//github.com/webrtc/apprtc">Code repo</a>
   </div>
 
 
-  <script src="js/loopback.js"></script>
+  
 
 
-  <script src="js/apprtc.debug.js"></script>
+  <script src="/js/apprtc.debug.js"></script>
 
 
 
@@ -130,13 +131,13 @@
   <script type="text/javascript">
     var loadingParams = {
       errorMessages: [],
-      isLoopback: true,
+      isLoopback: false,
       warningMessages: [],
 
-      mediaConstraints: {"audio": true, "video": {"optional": [], "mandatory": {"minWidth": "1280", "minHeight": "720"}}},
+      mediaConstraints: {"audio": true, "video": {"optional": [{"minWidth": "1280"}, {"minHeight": "720"}], "mandatory": {}}},
       offerOptions: {},
       peerConnectionConfig: {"rtcpMuxPolicy": "require", "bundlePolicy": "max-bundle", "iceServers": []},
-      peerConnectionConstraints: {"optional": [{"DtlsSrtpKeyAgreement": false}]},
+      peerConnectionConstraints: {"optional": []},
       iceServerRequestUrl: 'https://networktraversal.googleapis.com/v1alpha/iceconfig?key=AIzaSyA2WoxRAjLTwrD7upuk9N2qdlcOch3D2wU',
       iceServerTransports: '',
       wssUrl: 'wss://apprtc-ws.webrtc.org:443/ws',
