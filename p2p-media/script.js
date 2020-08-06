@@ -1,3 +1,4 @@
+//PeerはSkyway使うときにSkyWayのシグナリングサーバや、他のクライアントとの接続を管理するエージェント(詳細：https://qiita.com/yusuke84/items/13fab1d0f97c466e4d4b)
 const Peer = window.Peer;
 
 (async function main() {
@@ -10,8 +11,7 @@ const Peer = window.Peer;
   const meta = document.getElementById('js-meta');
   const sdkSrc = document.querySelector('script[src*=skyway]');
 
-  const localStream = await navigator.mediaDevices
-    .getUserMedia({
+  const localStream = await navigator.mediaDevices.getUserMedia({
       audio: true,
       video: true,
     })
@@ -23,6 +23,7 @@ const Peer = window.Peer;
   localVideo.playsInline = true;
   await localVideo.play().catch(console.error);
 
+  //Skywayのシグナリングサーバに接続, debugはログレベル
   const peer = (window.peer = new Peer({
     key: window.__SKYWAY_KEY__,
     debug: 3,
