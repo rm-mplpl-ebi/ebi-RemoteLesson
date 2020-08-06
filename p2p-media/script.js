@@ -10,8 +10,6 @@ const Peer = window.Peer;
   const meta = document.getElementById('js-meta');
   const sdkSrc = document.querySelector('script[src*=skyway]');
 
-
-
   const localStream = await navigator.mediaDevices
     .getUserMedia({
       audio: true,
@@ -19,7 +17,7 @@ const Peer = window.Peer;
     })
     .catch(console.error);
 
-  // Render local stream
+  // ローカル側の準備
   localVideo.muted = true;
   localVideo.srcObject = localStream;
   localVideo.playsInline = true;
@@ -30,10 +28,9 @@ const Peer = window.Peer;
     debug: 3,
   }));
 
-  // Register caller handler
+  // 呼び出す側のハンドラ
   callTrigger.addEventListener('click', () => {
-    // Note that you need to ensure the peer has connected to signaling server
-    // before using methods of peer instance.
+    // peerインスタンスのメソッドはP2Pが確立してないとだめ
     if (!peer.open) {
       return;
     }
@@ -41,7 +38,7 @@ const Peer = window.Peer;
     const mediaConnection = peer.call(remoteId.value, localStream);
 
     mediaConnection.on('stream', async stream => {
-      // Render remote stream for caller
+      // リモート側の準備
       remoteVideo.srcObject = stream;
       remoteVideo.playsInline = true;
       await remoteVideo.play().catch(console.error);
@@ -57,12 +54,12 @@ const Peer = window.Peer;
 
   peer.once('open', id => (localId.textContent = id));
 
-  // Register callee handler
+  // P2Pの接続設定
   peer.on('call', mediaConnection => {
     mediaConnection.answer(localStream);
 
     mediaConnection.on('stream', async stream => {
-      // Render remote stream for callee
+      // 呼び出される側のリモートの設定
       remoteVideo.srcObject = stream;
       remoteVideo.playsInline = true;
       await remoteVideo.play().catch(console.error);
