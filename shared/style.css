@@ -1,7 +1,5 @@
-/* normalize */
 body { margin: 0; }
 
-/* global styles */
 video {
   background-color: #111;
   width: 100%;
@@ -28,7 +26,7 @@ video {
   width: 980px;
 }
 
-/* p2p-media styles */
+/* p2p-mediaの設定 */
 .p2p-media {
   display: flex;
   align-items: center;
