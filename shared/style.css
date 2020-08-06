@@ -43,7 +43,7 @@ video {
   width: 30%;
 }
 
-/* p2p-data styles */
+/* テキストチャットのやつ(今は使ってない) */
 .p2p-data {
   display: grid;
   grid-template-columns: 30% 1fr;
@@ -57,7 +57,7 @@ video {
   margin-top: 0;
 }
 
-/* room */
+/* ルーム通話のやつ(今は使ってない) */
 .room {
   display: grid;
   grid-template-columns: 30% 40% 30%;
