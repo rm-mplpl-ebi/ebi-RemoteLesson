@@ -16,7 +16,7 @@ const Peer = window.Peer;
     localVideo.srcObject = localStream;
 
     const peer = new Peer({
-        key: window.__SKYWAY_KEY__,
+        key: "644d53b1-40c1-478d-8497-b57cf15a5737"
         debug: 3,
     });
 
