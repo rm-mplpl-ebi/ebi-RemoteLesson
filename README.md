@@ -1,7 +1,7 @@
 # ebi-RemoteLesson
 遠隔レッスン用の通信アプリ
 
-P2P専用
+P2P専用，
 片方のPeerIDを教えてもらい，入力後Callボタンを押下するとつながる
 
 シグナリングサーバはSkyWay(https://webrtc.ecl.ntt.com/)のものを利用
