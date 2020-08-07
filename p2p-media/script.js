@@ -1,8 +1,9 @@
 //PeerはSkyway使うときにSkyWayのシグナリングサーバや、他のクライアントとの接続を管理するエージェント(詳細：https://qiita.com/yusuke84/items/13fab1d0f97c466e4d4b)
 const Peer = window.Peer;
 
-//ストップウォッチの処理
+//ストップウォッチ(遅延計測用)の処理
 (function(){
+    //strictモードの使用
     'use strict';
 
     //htmlのidからデータを取得
@@ -10,7 +11,6 @@ const Peer = window.Peer;
     var start = document.getElementById('start');
     var stop = document.getElementById('stop');
     var reset = document.getElementById('reset');
-
     //クリック時の時間を保持するための変数
     var startTime;
     //経過時刻を更新するための変数,0で初期化
@@ -19,6 +19,7 @@ const Peer = window.Peer;
     var timerId;
     //タイマーをストップ -> 再開させたら0になってしまうのを避けるための変数
     var timeToadd = 0;
+    
     //ミリ秒→分，秒に変換
     //例：135200ミリ秒経過 -> 02:15:200
     function updateTimetText(){
