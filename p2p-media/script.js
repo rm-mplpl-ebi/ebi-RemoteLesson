@@ -156,3 +156,56 @@ const Peer = window.Peer;
 
   peer.on('error', console.error);
 })();
+
+
+//いいねボタン
+<Image source={ asset('like_button.png') } style={{
+          height: 0.6, width: 2,
+          transform: [
+            { translate: [-4, 2.5, -3] },
+            { rotateY: 25 }
+          ],
+        }} onEnter={ this._gazeLike.bind(this)} >
+        </Image>
+
+_gazeLike() {
+    console.log('いいね！しました');
+    this._postMessage({
+      'action': 'LIKE'
+    });
+  }
+
+_getLike() {
+    console.log('いいね！されました');
+
+    const likeHeadRot = {
+      x: -14.67994310099575,
+      y: 218.1507823613087,
+      z: 180
+    };
+
+    this.setState({
+      status: this.Status.GET_LIKE,
+      avatar_rot: likeHeadRot
+    });
+
+    Animated.spring(this.state.likeBounceValue, {
+      toValue: 1.5,
+      friction: 4,
+    }).start();
+
+    //いいね解除
+    this.setTimeout(() => {
+      this.setState({
+        status: this.Status.CONNECTED,
+      });
+
+      Animated.spring(this.state.likeBounceValue, {
+        toValue: 0.1,
+        friction: 4,
+      }).start();
+
+    }, this._likeIntervalTime);
+
+  }
+
