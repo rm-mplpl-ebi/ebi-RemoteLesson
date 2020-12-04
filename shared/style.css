@@ -34,12 +34,12 @@ video {
 }
 
 .p2p-media .remote-stream {
-  width: 120%;
+  width: {exact: 100};
+  height: {exact: 500}; 
 }
 
 .p2p-media .local-stream { 
-  width: {exact: 100};
-  height: {exact: 500}; 
+  width: 30%;
 }
 
 /* テキストチャットのやつ(今は使ってない) */
