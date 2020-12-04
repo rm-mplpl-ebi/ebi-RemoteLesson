@@ -2,8 +2,8 @@ body { margin: 0; }
 
 video {
   background-color: #111;
-  width: 108%;
-  heiht: 192%;
+   width: {exact: 300}, 
+   height: {exact: 200} 
 }
 
 .heading {
