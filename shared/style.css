@@ -39,6 +39,7 @@ video {
 
 .p2p-media .local-stream {
   width: 30%;
+  height: 100%;
 }
 
 /* テキストチャットのやつ(今は使ってない) */
