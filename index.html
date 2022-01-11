@@ -7,8 +7,6 @@
       p { clear: both; }
     </style>
     <script>
-    
-      var n = 0;
       function nextpages(){
         document.location.href = "/p2p-media/index.html"
       }
@@ -16,5 +14,8 @@
   </head>
   <body>
       <h1>webRTCのサンプル</h1>
+      <div id="startwebrtc">
+        <button onclick="setTimeout('nextpages()',1000);">デモページはこちらをクリック</button>
+      </div>
   </body>
 </html>
